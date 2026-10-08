@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TALLER MÓVIL PRO // Asistencia Mecánica Automotriz en Terreno</title>
+  <meta name="description" content="Servicio técnico automotriz a domicilio en la Región Metropolitana. Mecánica diésel y bencina, flotas, camiones, maquinaria y generadores en terreno.">
+  
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF9900' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVIGATION BAR -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Taller Móvil Pro Inicio">
+        <div class="brand-icon-wrap" aria-hidden="true">
+          <svg decoding="async" height="24" class="wrench-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">TALLER MÓVIL <span class="accent-text">PRO</span></span>
+          <span class="brand-sub">SERVICIO TÉCNICO EN TERRENO</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+          <li><a href="#como-funciona" class="nav-link">CÓMO FUNCIONA</a></li>
+          <li><a href="#cobertura" class="nav-link">COBERTURA</a></li>
+          <li><a href="#preguntas" class="nav-link">PREGUNTAS</a></li>
+          <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions: Phone & WhatsApp -->
+      <div class="header-actions">
+        <a href="tel:+56953797437" class="btn btn-outline btn-phone" aria-label="Llamar al teléfono +56 9 5379 7437">
+          <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="btn-text">+56 9 5379 7437</span>
+        </a>
+        <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20mec%C3%A1nica%20en%20terreno%20con%20Taller%20M%C3%B3vil%20Pro" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-whatsapp-header" aria-label="Contactar por WhatsApp">
+          <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span class="btn-text">WHATSAPP</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-meta-tag">NAV // ACCESO DIRECTO</div>
+        <ul class="mobile-nav-links">
+          <li><a href="#servicios" class="mobile-nav-link">SERVICIOS</a></li>
+          <li><a href="#como-funciona" class="mobile-nav-link">CÓMO FUNCIONA</a></li>
+          <li><a href="#cobertura" class="mobile-nav-link">COBERTURA</a></li>
+          <li><a href="#preguntas" class="mobile-nav-link">PREGUNTAS</a></li>
+          <li><a href="#contacto" class="mobile-nav-link">CONTACTO</a></li>
+        </ul>
+        <div class="mobile-actions">
+          <a href="tel:+56953797437" class="btn btn-outline w-100">
+            <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            LLAMAR: +56 9 5379 7437
+          </a>
+          <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20mec%C3%A1nica%20en%20terreno%20con%20Taller%20M%C3%B3vil%20Pro" target="_blank" rel="noopener noreferrer" class="btn btn-amber w-100">
+            <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            ESCRIBIR A WHATSAPP
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 2. HERO SECTION (SECCIÓN 01 // ASISTENCIA EN TERRENO) -->
+    <section class="section hero-section" id="hero">
+      <div class="technical-grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-layout">
+          <!-- Text Content -->
+          <div class="hero-content">
+
+            <h1 class="hero-title">
+              TU TALLER MECÁNICO <span class="highlight-amber">LLEGA A DONDE ESTÉS</span>
+            </h1>
+
+            <p class="hero-description">
+              Mantención, diagnóstico y reparación a domicilio para vehículos particulares bencineros y diésel, flotas de vehículos comerciales, camiones, maquinarias, generadores y equipos estacionarios. Atendemos en toda la Región Metropolitana.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions" style="margin-top: 2rem; display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#contacto" class="btn btn-amber btn-cta-main">
+                ESCRIBIR POR WHATSAPP
+              </a>
+              <a href="tel:+56953797437" class="btn btn-outline" style="border: 2px solid var(--amber); color: var(--amber); background: transparent;">
+                LLAMAR +56 9 5379 7437
+              </a>
+            </div>
+
+            <!-- Badges at bottom -->
+            <div class="hero-badges">
+              <div class="badge-item active-badge">
+                <span class="badge-dot" aria-hidden="true"></span>
+                <span class="badge-label">REGIÓN METROPOLITANA:</span>
+                <span class="badge-val">ACTIVO</span>
+              </div>
+              <div class="badge-divider" aria-hidden="true">|</div>
+              <div class="badge-item guarantee-badge">
+                <svg decoding="async" height="24" class="badge-shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+                <span class="badge-val">TRABAJO GARANTIZADO EN TERRENO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image Container -->
+          <div class="hero-visual">
+            <div class="industrial-frame">
+              <div class="frame-corner corner-tl" aria-hidden="true"></div>
+              <div class="frame-corner corner-tr" aria-hidden="true"></div>
+              <div class="frame-corner corner-bl" aria-hidden="true"></div>
+              <div class="frame-corner corner-br" aria-hidden="true"></div>
+              
+              <div class="frame-badge-top">
+                <span class="tech-tag">VAN TÉCNICA // EQUIPO MÓVIL #01</span>
+                <span class="tech-coords">LAT -33.4489 | LNG -70.6693</span>
+              </div>
+
+              <div class="image-wrapper">
+                <img height="750" width="1200" decoding="async" 
+                  src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Vehículo taller móvil completamente equipado con herramientas e iluminación técnica nocturna" 
+                  class="hero-img"
+                  loading="eager"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80';"
+                >
+                <div class="img-overlay-industrial"></div>
+                <div class="crosshair-marker" aria-hidden="true">
+                  <span class="cross-line h-line"></span>
+                  <span class="cross-line v-line"></span>
+                  <span class="marker-label">UNIDAD LISTA</span>
+                </div>
+              </div>
+
+              <div class="frame-meta-bottom">
+                <div class="meta-unit">
+                  <span class="unit-title">EQUIPAMIENTO</span>
+                  <span class="unit-data">SCANNER OBD2/HD + COMPRESOR + HIDRÁULICA</span>
+                </div>
+                <div class="meta-status">
+                  <span class="unit-title">TIEMPO DE RESPUESTA</span>
+                  <span class="unit-data text-amber">COORDINACIÓN INMEDIATA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SERVICES & CAPABILITIES (SECCIÓN 02 // CAPACIDADES) -->
+    <section class="section services-section" id="servicios">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-heading">
+          <h2 class="section-title">LO QUE HACEMOS, DONDE LO NECESITES</h2>
+          <p class="section-subtitle">
+            Llevamos herramienta, escáner y equipo de diagnóstico al lugar donde está el vehículo, la máquina o el equipo. Trabajamos motores diésel, bencina, generadores y equipos estacionarios.
+          </p>
+        </div>
+
+        <!-- 3x2 Grid of 6 Service Cards -->
+        <!-- INTERACTIVE SERVICES ACCORDION -->
+        <div class="services-accordion" id="services-accordion">
+          <!-- Item 1 -->
+          <article class="service-acc-item is-open">
+            <button class="service-acc-trigger" aria-expanded="true">
+              <span class="acc-title">VEHÍCULOS PARTICULARES</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 3c-.1.2-.1.4-.1.6v4.5c0 .6.4 1 1 1h2"/>
+                  <circle cx="7" cy="17" r="2"/>
+                  <path d="M9 17h6"/>
+                  <circle cx="17" cy="17" r="2"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Mecánica general, mantenimiento y cambios en tu casa, oficina o estacionamiento.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Mecánica general y mantenimiento</li>
+                  <li><span class="bullet-arrow">›</span> Cambio de aceite y filtros</li>
+                  <li><span class="bullet-arrow">›</span> Frenos y suspensión</li>
+                  <li><span class="bullet-arrow">›</span> Batería y alternador</li>
+                  <li><span class="bullet-arrow">›</span> Escáner y diagnóstico electrónico</li>
+                  <li><span class="bullet-arrow">›</span> Electricidad y electrónica automotriz</li>
+                  <li><span class="bullet-arrow">›</span> Programaciones</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20atenci%C3%B3n%20para%20un%20Veh%C3%ADculo%20Particular" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  COTIZAR VEHÍCULO →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="service-acc-item">
+            <button class="service-acc-trigger" aria-expanded="false">
+              <span class="acc-title">FLOTAS Y EMPRESAS</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <rect x="1" y="3" width="15" height="13"/>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/>
+                  <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Visitas programadas para mantener cada unidad de tu flota en operación.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Mecánica integral</li>
+                  <li><span class="bullet-arrow">›</span> Diagnóstico en terreno</li>
+                  <li><span class="bullet-arrow">›</span> Mantención por unidad</li>
+                  <li><span class="bullet-arrow">›</span> Visitas periódicas</li>
+                  <li><span class="bullet-arrow">›</span> Registro de cada trabajo</li>
+                  <li><span class="bullet-arrow">›</span> Continuidad operativa de cada vehículo</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20atenci%C3%B3n%20para%20Flotas%20de%20Empresas" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  CONVENIO DE FLOTA →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="service-acc-item">
+            <button class="service-acc-trigger" aria-expanded="false">
+              <span class="acc-title">CAMIONES</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <path d="M10 17h4V5H2v12h3"/>
+                  <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"/>
+                  <circle cx="7.5" cy="17.5" r="2.5"/>
+                  <circle cx="17.5" cy="17.5" r="2.5"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Servicio integral de todos los sistemas, en patio o camino.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Servicio integral completo de todos los sistemas</li>
+                  <li><span class="bullet-arrow">›</span> Sistemas de inyección</li>
+                  <li><span class="bullet-arrow">›</span> Frenos y sistemas de aire</li>
+                  <li><span class="bullet-arrow">›</span> Mantenimiento y continuidad operativa</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20mec%C3%A1nica%20para%20Camiones" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  ASISTENCIA CAMIONES →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="service-acc-item">
+            <button class="service-acc-trigger" aria-expanded="false">
+              <span class="acc-title">MAQUINARIA</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <path d="M2 18h20"/>
+                  <path d="M5 18V9h5l4 4h4v5"/>
+                  <path d="M8 9V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v4"/>
+                  <circle cx="6" cy="18" r="2"/>
+                  <circle cx="18" cy="18" r="2"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Equipos de obra, agrícolas y de movimiento de tierra.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Motores diésel</li>
+                  <li><span class="bullet-arrow">›</span> Revisión de sistemas hidráulicos</li>
+                  <li><span class="bullet-arrow">›</span> Reparación de componentes hidráulicos</li>
+                  <li><span class="bullet-arrow">›</span> Mantenimiento correctivo y preventivo</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20para%20Maquinaria" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  REVISIÓN DE MAQUINARIA →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="service-acc-item">
+            <button class="service-acc-trigger" aria-expanded="false">
+              <span class="acc-title">MOTORES DIÉSEL</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <rect x="4" y="8" width="16" height="12" rx="1"/>
+                  <path d="M9 4v4"/>
+                  <path d="M15 4v4"/>
+                  <path d="M2 13h2"/>
+                  <path d="M20 13h2"/>
+                  <path d="M9 14h6"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Diagnóstico y reparación especializada para equipos y vehículos a diésel.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Prueba de inyectores</li>
+                  <li><span class="bullet-arrow">›</span> Sistema de combustible</li>
+                  <li><span class="bullet-arrow">›</span> Separadores de agua</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20diagn%C3%B3stico%20de%20Motor%20Di%C3%A9sel" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  DIAGNÓSTICO DIÉSEL →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="service-acc-item">
+            <button class="service-acc-trigger" aria-expanded="false">
+              <span class="acc-title">GENERADORES Y EQUIPOS ESTACIONARIOS</span>
+              <div class="acc-icon-group">
+                <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="service-icon">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <div class="service-acc-panel">
+              <div class="panel-inner">
+                <p class="card-desc">Mantenimiento y reparación de generadores y equipos estacionarios en sitio.</p>
+                <ul class="card-list">
+                  <li><span class="bullet-arrow">›</span> Mantención preventiva y correctiva</li>
+                  <li><span class="bullet-arrow">›</span> Diagnóstico y puesta en marcha</li>
+                  <li><span class="bullet-arrow">›</span> Sistema de carga, batería y regulación</li>
+                  <li><span class="bullet-arrow">›</span> Cambio de aceite y filtros</li>
+                </ul>
+                <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20para%20Generadores%20o%20Equipos%20Estacionarios" target="_blank" rel="noopener noreferrer" class="btn btn-amber mt-3 w-100">
+                  ATENCIÓN GENERADOR →
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ON-SITE PROMO BANNER (SECCIÓN 03 // EN TERRENO) -->
+    <section class="banner-section" id="en-terreno">
+      <div class="banner-bg-wrapper">
+        <img height="1080" width="1920" decoding="async" 
+          src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1920&q=80" 
+          alt="Mecánico especializado utilizando escáner y herramientas automotrices pesadas en terreno" 
+          class="banner-bg-img"
+          loading="lazy"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1920&q=80';"
+        >
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="container banner-inner">
+        <div class="banner-content-box">
+
+          <h2 class="banner-title">
+            ATENDEMOS EN OBRA, PATIO, CAMINO O TU PROPIO GARAJE
+          </h2>
+
+          <p class="banner-description">
+            No necesitas mover la máquina ni llevar el vehículo al taller: llegamos con el equipo necesario para dejar el trabajo hecho en el lugar.
+          </p>
+
+          <div class="banner-actions">
+            <a href="https://wa.me/56953797437?text=Hola%2C%20tengo%20un%20veh%C3%ADculo%20o%20m%C3%A1quina%20detenida%20en%20terreno%20y%20necesito%20asistencia" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-lg">
+              <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+              SOLICITAR TALLER EN MI UBICACIÓN
+            </a>
+            <div class="banner-spec-badge">
+              <span class="spec-code">AUTONOMÍA TÉCNICA 100%</span>
+              <span class="spec-text">GENERACIÓN ELÉCTRICA PROPIA Y HERRAMIENTA PESADA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS (SECCIÓN 04 // CÓMO FUNCIONA) -->
+    <section class="section workflow-section" id="como-funciona">
+      <div class="container">
+        <div class="workflow-layout">
+          <!-- Left Visual: Vertical Image -->
+          <div class="workflow-visual">
+            <div class="industrial-frame">
+              <div class="frame-corner corner-tl" aria-hidden="true"></div>
+              <div class="frame-corner corner-tr" aria-hidden="true"></div>
+              <div class="frame-corner corner-bl" aria-hidden="true"></div>
+              <div class="frame-corner corner-br" aria-hidden="true"></div>
+
+              <div class="frame-badge-top">
+                <span class="tech-tag">PROTOCOLO DE ATENCIÓN // PASO A PASO</span>
+                <span class="tech-coords">SOPORTE ÁGIL</span>
+              </div>
+
+              <div class="image-wrapper vertical-wrapper">
+                <img height="1125" width="900" decoding="async" 
+                  src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80" 
+                  alt="Mecánico profesional realizando diagnóstico e intervención en el compartimento del motor" 
+                  class="workflow-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=900&q=80';"
+                >
+                <div class="img-overlay-industrial"></div>
+                <div class="step-progress-badge">
+                  <span class="step-badge-num">4</span>
+                  <span class="step-badge-text">PASOS PARA SOLUCIONAR TU PROBLEMA</span>
+                </div>
+              </div>
+
+              <div class="frame-meta-bottom">
+                <div class="meta-unit">
+                  <span class="unit-title">RESOLUCIÓN</span>
+                  <span class="unit-data">SIN GRÚAS NI TRASLADOS INNECESARIOS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: 4 Steps -->
+          <div class="workflow-content">
+
+            <h2 class="section-title">
+              CUATRO PASOS Y EL TRABAJO ESTÁ EN MARCHA
+            </h2>
+
+            <div class="steps-timeline">
+              <!-- Step 01 -->
+              <div class="step-item">
+                <div class="step-indicator">
+                  <span class="step-number">01</span>
+                  <span class="step-line" aria-hidden="true"></span>
+                </div>
+                <div class="step-info">
+                  <h3 class="step-title">ESCRÍBENOS</h3>
+                  <p class="step-desc">
+                    Cuéntanos qué vehículo o máquina hay que atender, qué le pasa y dónde está.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 02 -->
+              <div class="step-item">
+                <div class="step-indicator">
+                  <span class="step-number">02</span>
+                  <span class="step-line" aria-hidden="true"></span>
+                </div>
+                <div class="step-info">
+                  <h3 class="step-title">COORDINAMOS</h3>
+                  <p class="step-desc">
+                    Definimos hora y lugar: tu casa, la oficina, el patio de la empresa o la obra.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 03 -->
+              <div class="step-item">
+                <div class="step-indicator">
+                  <span class="step-number">03</span>
+                  <span class="step-line" aria-hidden="true"></span>
+                </div>
+                <div class="step-info">
+                  <h3 class="step-title">LLEGAMOS CON EL TALLER</h3>
+                  <p class="step-desc">
+                    Viajamos con herramienta, escáner y equipo de diagnóstico hasta el lugar.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 04 -->
+              <div class="step-item">
+                <div class="step-indicator">
+                  <span class="step-number">04</span>
+                </div>
+                <div class="step-info">
+                  <h3 class="step-title">REVISAMOS Y TRABAJAMOS</h3>
+                  <p class="step-desc">
+                    Diagnosticamos, te explicamos lo que encontramos y dejamos el trabajo hecho en terreno.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="workflow-cta">
+              <a href="https://wa.me/56953797437?text=Hola%2C%20quiero%20iniciar%20el%20paso%201%20para%20coordinar%20una%20visita" target="_blank" rel="noopener noreferrer" class="btn btn-amber">
+                <svg decoding="async" height="24" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                INICIAR COORDINACIÓN
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. COVERAGE & COMMUNES (SECCIÓN 05 // COBERTURA) -->
+    <section class="section coverage-section" id="cobertura">
+      <div class="container">
+        <div class="coverage-layout">
+          <!-- Left Visual: Close-up engine detail -->
+          <div class="coverage-visual">
+            <div class="industrial-frame">
+              <div class="frame-corner corner-tl" aria-hidden="true"></div>
+              <div class="frame-corner corner-tr" aria-hidden="true"></div>
+              <div class="frame-corner corner-bl" aria-hidden="true"></div>
+              <div class="frame-corner corner-br" aria-hidden="true"></div>
+
+              <div class="frame-badge-top">
+                <span class="tech-tag">ZONA METROPOLITANA // MAPEO ACTIVO</span>
+                <span class="tech-coords">SANTIAGO & ALREDEDORES</span>
+              </div>
+
+              <div class="image-wrapper">
+                <img height="562" width="900" decoding="async" 
+                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" 
+                  alt="Detalle de precisión de motor automotriz y componentes mecánicos" 
+                  class="coverage-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=900&q=80';"
+                >
+                <div class="img-overlay-industrial"></div>
+                <div class="communes-count-badge">
+                  <span class="badge-big-num">24+</span>
+                  <span class="badge-small-text">COMUNAS CON COBERTURA HABITUAL</span>
+                </div>
+              </div>
+
+              <div class="frame-meta-bottom">
+                <div class="meta-unit">
+                  <span class="unit-title">DESPLAZAMIENTO</span>
+                  <span class="unit-data text-amber">LOGÍSTICA MÓVIL DIRECTA A DESTINO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: Segments & Communes Grid -->
+          <div class="coverage-content">
+
+            <h2 class="section-title">TODA LA REGIÓN METROPOLITANA</h2>
+            
+            <p class="section-subtitle">
+              Coordinamos la visita según tu ubicación dentro de la región. Si tu comuna no aparece en la lista, escríbenos y confirmamos la disponibilidad.
+            </p>
+
+            <!-- Upper Columns: Particulares vs Flotas -->
+            <div class="coverage-segments-grid">
+              <!-- Particulares Box -->
+              <div class="segment-box">
+                <div class="segment-header">
+                  <span class="segment-tag">MODALIDAD 01</span>
+                  <h3 class="segment-title">PARTICULARES</h3>
+                </div>
+                <ul class="segment-features">
+                  <li><span class="bullet-check">✓</span> Una visita para tu vehículo</li>
+                  <li><span class="bullet-check">✓</span> Presupuesto antes de empezar</li>
+                  <li><span class="bullet-check">✓</span> Mantención preventiva y reparación</li>
+                </ul>
+              </div>
+
+              <!-- Flotas Box -->
+              <div class="segment-box">
+                <div class="segment-header">
+                  <span class="segment-tag">MODALIDAD 02</span>
+                  <h3 class="segment-title">FLOTAS Y EMPRESAS</h3>
+                </div>
+                <ul class="segment-features">
+                  <li><span class="bullet-check">✓</span> Visitas programadas por unidad</li>
+                  <li><span class="bullet-check">✓</span> Menos tiempo con vehículos detenidos</li>
+                  <li><span class="bullet-check">✓</span> Registro de cada trabajo realizado</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Lower Grid: COMUNAS QUE CUBRIMOS -->
+            <div class="communes-card">
+              <div class="communes-card-header">
+                <div class="communes-header-title">
+                  <span class="icon-geo" aria-hidden="true">📍</span>
+                  <h3 class="communes-heading">COMUNAS QUE CUBRIMOS</h3>
+                </div>
+                <div class="communes-filter-wrap">
+                  <input type="text" id="commune-search" placeholder="Buscar comuna..." aria-label="Filtrar comunas de la lista">
+                </div>
+              </div>
+
+              <!-- 3-Column Bulleted List -->
+              <div class="communes-list" id="communes-grid">
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">SANTIAGO CENTRO</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">PROVIDENCIA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">LAS CONDES</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">VITACURA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">ÑUÑOA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">LA REINA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">PEÑALOLÉN</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">LA FLORIDA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">PUENTE ALTO</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">SAN BERNARDO</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">MAIPÚ</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">CERRILLOS</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">ESTACIÓN CENTRAL</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">PUDAHUEL</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">QUILICURA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">RENCA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">INDEPENDENCIA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">RECOLETA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">HUECHURABA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">LO BARNECHEA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">COLINA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">SAN MIGUEL</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">LA CISTERNA</span></div>
+                <div class="commune-pill"><span class="commune-dot"></span><span class="commune-name">EL BOSQUE</span></div>
+              </div>
+
+              <div class="communes-footer-note">
+                <span class="note-amber">¿TU COMUNA ESTÁ FUERA DE LA LISTA?</span>
+                <span>Contáctanos por WhatsApp para evaluar factibilidad y coordinar viaje técnico.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ SECTION (SECCIÓN 06 // PREGUNTAS FRECUENTES) -->
+    <section class="section faq-section" id="preguntas">
+      <div class="container">
+        <!-- Section Heading -->
+        <div class="section-heading">
+          <h2 class="section-title">LO QUE SUELEN PREGUNTARNOS</h2>
+          <p class="section-subtitle">
+            Si tu duda no está acá, escríbenos por WhatsApp y te respondemos directo.
+          </p>
+        </div>
+
+        <!-- Accordion Component -->
+        <div class="accordion-container" id="faq-accordion">
+          <!-- FAQ Item 1 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" id="faq-btn-1" aria-controls="faq-content-1">
+              <span class="faq-number">01</span>
+              <span class="faq-question">¿Atienden a domicilio en toda la Región Metropolitana?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <div class="accordion-panel-inner">
+                <p>Sí, nos desplazamos a todas las comunas de la Región Metropolitana (Santiago, sector oriente, poniente, norte y sur). Coordinamos fecha, hora y ubicación exacta para llegar directamente con el taller móvil equipado con toda la herramienta necesaria.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 (Open by default as requested) -->
+          <div class="accordion-item is-open">
+            <button class="accordion-trigger" aria-expanded="true" id="faq-btn-2" aria-controls="faq-content-2">
+              <span class="faq-number">02</span>
+              <span class="faq-question">¿Trabajan motores diésel y bencina?</span>
+              <span class="faq-icon" aria-hidden="true">−</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="accordion-panel-inner">
+                <p><strong>Sí, atendemos ambos:</strong> vehículos a bencina con diagnóstico electrónico y equipos a diésel, incluyendo camiones y maquinaria. Contamos con escáneres multimarca profesionales, instrumental para sistemas de inyección Common Rail, pruebas de presión y análisis electrónico avanzado.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" id="faq-btn-3" aria-controls="faq-content-3">
+              <span class="faq-number">03</span>
+              <span class="faq-question">¿Qué datos necesito para pedir la visita?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <div class="accordion-panel-inner">
+                <p>Solo requerimos los siguientes datos básicos para preparar la unidad móvil:</p>
+                <ul class="faq-details-list">
+                  <li><strong>Vehículo o Equipo:</strong> Marca, modelo y año aproximado.</li>
+                  <li><strong>Tipo de motorización:</strong> Bencina o Diésel.</li>
+                  <li><strong>Síntomas o requerimiento:</strong> Qué falla presenta o si es mantención preventiva (aceite, frenos, escáner, etc.).</li>
+                  <li><strong>Ubicación:</strong> Comuna y dirección de atención (domicilio, empresa, obra o estacionamiento).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" id="faq-btn-4" aria-controls="faq-content-4">
+              <span class="faq-number">04</span>
+              <span class="faq-question">¿Atienden flotas de empresas?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <div class="accordion-panel-inner">
+                <p>Sí. Prestamos servicios corporativos con visitas programadas por unidad, mantenciones preventivas periódicas, diagnóstico en terreno y emisión de informes técnicos detallados para mantener la continuidad operativa de tu empresa y evitar tiempos muertos de tu personal.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" id="faq-btn-5" aria-controls="faq-content-5">
+              <span class="faq-number">05</span>
+              <span class="faq-question">¿Cómo se define el valor del trabajo?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-5" role="region" aria-labelledby="faq-btn-5" hidden>
+              <div class="accordion-panel-inner">
+                <p>Mantenemos una política de <strong>presupuesto claro y transparente sin costos ocultos</strong>. Para trabajos habituales (mantenciones de aceite, frenos, escáner) cotizamos previamente. Para fallas complejas, acordamos la visita de diagnóstico en terreno y, una vez detectada la causa, te entregamos el presupuesto detallado de repuestos y mano de obra antes de realizar cualquier intervención.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false" id="faq-btn-6" aria-controls="faq-content-6">
+              <span class="faq-number">06</span>
+              <span class="faq-question">¿Qué pasa si la falla no se puede resolver en terreno?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion-panel" id="faq-content-6" role="region" aria-labelledby="faq-btn-6" hidden>
+              <div class="accordion-panel-inner">
+                <p>Más del 85% de los requerimientos habituales se resuelven en el mismo lugar gracias a nuestro equipamiento autónomo. En caso de una falla estructural mayor que requiera rectificación pesada o banco de pruebas especial, te entregamos el diagnóstico técnico completo por escrito y coordinamos la mejor alternativa de solución.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ CTA Box -->
+        <div class="faq-cta-banner">
+          <div class="faq-cta-text">
+            <h4>¿TIENES UNA CONSULTA ESPECÍFICA SOBRE TU CASO?</h4>
+            <p>Escríbenos en un mensaje directo por WhatsApp y te orientamos sin compromiso.</p>
+          </div>
+          <a href="https://wa.me/56953797437?text=Hola%2C%20tengo%20una%20consulta%20espec%C3%ADfica%20sobre%20mi%20veh%C3%ADculo" target="_blank" rel="noopener noreferrer" class="btn btn-amber">
+            CONSULTAR POR WHATSAPP
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION (SECCIÓN 07 // CONTACTO) -->
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- Left Content & Interactive Builder -->
+          <div class="contact-content">
+
+            <h2 class="section-title">CUÉNTANOS QUÉ HAY QUE REVISAR</h2>
+            
+            <p class="section-description">
+              Escríbenos por WhatsApp o llámanos, y coordinamos la visita a domicilio en la Región Metropolitana.
+            </p>
+
+            <!-- Interactive Lead Capture Funnel (Contact) -->
+            <div class="lead-capture-funnel">
+              <div class="funnel-header">
+                <h3>COTIZA O AGENDA TU ASISTENCIA EN TERRENO</h3>
+                <p>Selecciona los datos de tu vehículo para coordinar la visita técnica.</p>
+              </div>
+              
+              <form class="funnel-body" id="contactFunnelForm">
+                <!-- Step 1 -->
+                <div class="funnel-step active-step">
+                  <label class="step-label">1. ¿Qué necesitas atender?</label>
+                  <div class="pill-group" id="vehicleTypePillsContact">
+                    <button type="button" class="pill-btn" data-value="Auto particular">Auto particular</button>
+                    <button type="button" class="pill-btn" data-value="Camión">Camión</button>
+                    <button type="button" class="pill-btn" data-value="Flota">Flota</button>
+                    <button type="button" class="pill-btn" data-value="Maquinaria">Maquinaria</button>
+                    <button type="button" class="pill-btn" data-value="Generador / Estacionario">Generador / Estacionario</button>
+                  </div>
+                  <input type="hidden" class="input-tipo-vehiculo" required>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="funnel-step">
+                  <label class="step-label">2. Datos del vehículo y problema:</label>
+                  <div class="form-row">
+                    <input type="text" class="form-control input-marca" placeholder="Ej: Toyota Hilux, Scania R450, Bobcat" required>
+                    <input type="text" class="form-control input-ano" placeholder="Ej: 2018" required>
+                  </div>
+                  <select class="form-control mt-2 input-falla" required>
+                    <option value="" disabled selected>Selecciona el tipo de problema / falla...</option>
+                    <option value="No arranca / Batería">No arranca / Batería</option>
+                    <option value="Diagnóstico con escáner">Diagnóstico con escáner</option>
+                    <option value="Frenos o suspensión">Frenos o suspensión</option>
+                    <option value="Problema de inyección / Motor Diésel">Problema de inyección / Motor Diésel</option>
+                    <option value="Fuga hidráulica">Fuga hidráulica</option>
+                    <option value="Mantención preventiva">Mantención preventiva</option>
+                    <option value="Otro problema">Otro problema</option>
+                  </select>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="funnel-step">
+                  <label class="step-label">3. Ubicación del servicio:</label>
+                  <div class="form-row">
+                    <select class="form-control input-comuna" required>
+                      <option value="" disabled selected>Selecciona la comuna...</option>
+                      <option value="Santiago Centro">Santiago Centro</option>
+                      <option value="Providencia">Providencia</option>
+                      <option value="Las Condes">Las Condes</option>
+                      <option value="Vitacura">Vitacura</option>
+                      <option value="Ñuñoa">Ñuñoa</option>
+                      <option value="La Reina">La Reina</option>
+                      <option value="Peñalolén">Peñalolén</option>
+                      <option value="La Florida">La Florida</option>
+                      <option value="Puente Alto">Puente Alto</option>
+                      <option value="San Bernardo">San Bernardo</option>
+                      <option value="Maipú">Maipú</option>
+                      <option value="Cerrillos">Cerrillos</option>
+                      <option value="Estación Central">Estación Central</option>
+                      <option value="Pudahuel">Pudahuel</option>
+                      <option value="Quilicura">Quilicura</option>
+                      <option value="Renca">Renca</option>
+                      <option value="Independencia">Independencia</option>
+                      <option value="Recoleta">Recoleta</option>
+                      <option value="Huechuraba">Huechuraba</option>
+                      <option value="Lo Barnechea">Lo Barnechea</option>
+                      <option value="Colina">Colina</option>
+                      <option value="San Miguel">San Miguel</option>
+                      <option value="La Cisterna">La Cisterna</option>
+                      <option value="El Bosque">El Bosque</option>
+                    </select>
+                  </div>
+                  <input type="text" class="form-control mt-2 input-direccion" placeholder="Ej: Calle Los Robles 1234 / En obra / En garaje" required>
+                </div>
+
+                <button type="button" class="btn btn-amber w-100 mt-3 btn-funnel-submit">
+                  SOLICITAR ASISTENCIA POR WHATSAPP
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Info Box -->
+          <div class="contact-info-panel">
+            <div class="info-card industrial-card">
+              <div class="card-corner corner-tl" aria-hidden="true"></div>
+              <div class="card-corner corner-tr" aria-hidden="true"></div>
+              <div class="card-corner corner-bl" aria-hidden="true"></div>
+              <div class="card-corner corner-br" aria-hidden="true"></div>
+
+              <div class="info-card-header">
+                <span class="info-header-tag">DATOS DE CONTACTO // TERRENO</span>
+                <h3 class="info-header-title">CENTRAL TÉCNICA MÓVIL</h3>
+              </div>
+
+              <div class="info-items-list">
+                <!-- Teléfono -->
+                <div class="info-item">
+                  <div class="info-item-label">TELÉFONO DE CONTACTO</div>
+                  <div class="info-item-val-group">
+                    <a href="tel:+56953797437" class="info-phone-link">+56 9 5379 7437</a>
+                    <button type="button" class="btn-copy-phone" id="btn-copy-phone" title="Copiar número" aria-label="Copiar número de teléfono">
+                      <svg decoding="async" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Zona de atención -->
+                <div class="info-item">
+                  <div class="info-item-label">ZONA DE ATENCIÓN</div>
+                  <div class="info-item-value highlight-white">Región Metropolitana</div>
+                  <div class="info-item-sub">Atención directa a domicilio, obra, patio y faenas</div>
+                </div>
+
+                <!-- Estado del servicio -->
+                <div class="info-item status-box-highlight">
+                  <div class="info-item-label">ESTADO DEL SERVICIO</div>
+                  <div class="live-status-pill">
+                    <span class="live-dot-pulse" aria-hidden="true"></span>
+                    <span class="status-strong">RECIBIENDO SOLICITUDES</span>
+                  </div>
+                  <div class="info-item-sub">Móviles técnicos en desplazamiento activo</div>
+                </div>
+
+                <!-- Horario & Disponibilidad -->
+                <div class="info-item">
+                  <div class="info-item-label">MODALIDAD DE ATENCIÓN</div>
+                  <div class="info-item-value">Lunes a Sábado con coordinación directa</div>
+                  <div class="info-item-sub">Urgencias y visitas programadas según disponibilidad</div>
+                </div>
+              </div>
+
+              <!-- Security / Operational stamps -->
+              <div class="operational-stamps">
+                <div class="stamp-box">
+                  <span class="stamp-icon">⚡</span>
+                  <span class="stamp-text">AUTONOMÍA TÉCNICA</span>
+                </div>
+                <div class="stamp-box">
+                  <span class="stamp-icon">🛡</span>
+                  <span class="stamp-text">FACTURACIÓN Y GARANTÍA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-columns">
+        <!-- Left Column: Logo & Summary -->
+        <div class="footer-col footer-col-brand">
+          <a href="#hero" class="brand-logo footer-logo">
+            <div class="brand-icon-wrap" aria-hidden="true">
+              <svg decoding="async" height="24" class="wrench-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">TALLER MÓVIL <span class="accent-text">PRO</span></span>
+              <span class="brand-sub">SERVICIO TÉCNICO EN TERRENO</span>
+            </div>
+          </a>
+          <p class="footer-summary">
+            Servicio técnico mecánico automotriz e industrial en terreno. Diagnóstico profesional, mantención y reparación donde se encuentra el vehículo en toda la Región Metropolitana.
+          </p>
+          <div class="footer-operator-badge">
+            <span class="operator-tag">OPERADO POR</span>
+            <span class="operator-name">CYD MECÁNICA SPA</span>
+          </div>
+        </div>
+
+        <!-- Middle Column: Navigation / Sitio -->
+        <div class="footer-col footer-col-links">
+          <h4 class="footer-col-title">SITIO // NAVEGACIÓN</h4>
+          <ul class="footer-links-list">
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#como-funciona">CÓMO FUNCIONA</a></li>
+            <li><a href="#cobertura">COBERTURA</a></li>
+            <li><a href="#preguntas">PREGUNTAS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Contacto -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-col-title">CONTACTO // URGENCIAS</h4>
+          <div class="footer-contact-items">
+            <div class="footer-contact-line">
+              <span class="f-contact-label">WHATSAPP:</span>
+              <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20mec%C3%A1nica%20en%20terreno" target="_blank" rel="noopener noreferrer" class="f-contact-link highlight-amber">
+                +56 9 5379 7437 (CHAT DIRECTO)
+              </a>
+            </div>
+            <div class="footer-contact-line">
+              <span class="f-contact-label">LLAMADAS:</span>
+              <a href="tel:+56953797437" class="f-contact-link">
+                +56 9 5379 7437
+              </a>
+            </div>
+            <div class="footer-contact-line">
+              <span class="f-contact-label">COBERTURA:</span>
+              <span class="f-contact-text">Región Metropolitana de Santiago, Chile</span>
+            </div>
+            <div class="footer-contact-line">
+              <span class="f-contact-label">ESTADO:</span>
+              <span class="f-contact-badge">• OPERACIÓN EN TERRENO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          © 2026 CYD MECÁNICA SPA. TODOS LOS DERECHOS RESERVADOS.
+        </div>
+        <div class="footer-region-badge">
+          REGIÓN METROPOLITANA // SERVICIO A DOMICILIO
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK WHATSAPP BUTTON (DESKTOP & MOBILE) -->
+  <a href="https://wa.me/56953797437?text=Hola%2C%20necesito%20asistencia%20mec%C3%A1nica%20en%20terreno%20con%20Taller%20M%C3%B3vil%20Pro" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Escribir por WhatsApp a Taller Móvil Pro">
+    <div class="floating-pulse"></div>
+    <svg decoding="async" height="24" class="floating-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+    <span class="floating-text">WHATSAPP EN VIVO</span>
+  </a>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toast-message">Número copiado al portapapeles</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

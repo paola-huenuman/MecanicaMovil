@@ -1,0 +1,263 @@
+/**
+ * TALLER MÓVIL PRO - Client Scripts
+ * Streamlined, vanilla ES6 logic using event delegation.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const searchInput = document.getElementById('commune-search');
+  const communesGrid = document.getElementById('communes-grid');
+  const toast = document.getElementById('toast-notification');
+  const toastMsg = document.getElementById('toast-message');
+  
+  let toastTimer = null;
+  const phoneNumber = '+56 9 5379 7437';
+
+  // State Management
+  const state = {
+    menuOpen: false,
+  };
+
+  function toggleMenu(forceState) {
+    state.menuOpen = typeof forceState === 'boolean' ? forceState : !state.menuOpen;
+    if(toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', String(state.menuOpen));
+      toggleBtn.classList.toggle('is-active', state.menuOpen);
+    }
+    if(drawer) {
+      drawer.classList.toggle('is-open', state.menuOpen);
+      drawer.setAttribute('aria-hidden', String(!state.menuOpen));
+    }
+  }
+
+  function showToast(text) {
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+  }
+
+  // --- SINGLE DELEGATED EVENT LISTENER ---
+  document.body.addEventListener('click', async (e) => {
+    // 1. Mobile Menu Toggle
+    if (e.target.closest('#mobile-toggle')) {
+      toggleMenu();
+      return;
+    }
+
+    // Close menu when clicking mobile links
+    if (e.target.closest('.mobile-nav-link') || e.target.closest('.mobile-actions a')) {
+      toggleMenu(false);
+    }
+
+    // 2. FAQ Accordion
+    const faqTrigger = e.target.closest('.accordion-trigger');
+    if (faqTrigger) {
+      const item = faqTrigger.closest('.accordion-item');
+      const panel = item.querySelector('.accordion-panel');
+      const icon = item.querySelector('.faq-icon');
+      const isExpanded = faqTrigger.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        faqTrigger.setAttribute('aria-expanded', 'false');
+        item.classList.remove('is-open');
+        panel.hidden = true;
+        if (icon) icon.textContent = '+';
+      } else {
+        // Close others
+        document.querySelectorAll('.accordion-item.is-open').forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherTrigger = otherItem.querySelector('.accordion-trigger');
+            const otherPanel = otherItem.querySelector('.accordion-panel');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            if (otherTrigger && otherPanel) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+              otherItem.classList.remove('is-open');
+              otherPanel.hidden = true;
+              if (otherIcon) otherIcon.textContent = '+';
+            }
+          }
+        });
+
+        // Open current
+        faqTrigger.setAttribute('aria-expanded', 'true');
+        item.classList.add('is-open');
+        panel.hidden = false;
+        if (icon) icon.textContent = '−';
+      }
+      return;
+    }
+
+    // 3. WhatsApp Builder (Lead Capture Funnel)
+    if (e.target.closest('.pill-btn')) {
+      const btn = e.target.closest('.pill-btn');
+      const pillGroup = btn.closest('.pill-group');
+      const hiddenInput = pillGroup.nextElementSibling;
+      
+      pillGroup.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      hiddenInput.value = btn.getAttribute('data-value');
+      
+      pillGroup.classList.remove('error');
+      return;
+    }
+
+    if (e.target.closest('.btn-funnel-submit')) {
+      e.preventDefault();
+      const form = e.target.closest('.funnel-form');
+      const tipoInput = form.querySelector('.input-tipo');
+      const marcaInput = form.querySelector('.input-marca');
+      const anoInput = form.querySelector('.input-ano');
+      const fallaInput = form.querySelector('.input-falla');
+      const comunaInput = form.querySelector('.input-comuna');
+      const direccionInput = form.querySelector('.input-direccion');
+
+      let isValid = true;
+      const requiredFields = [tipoInput, marcaInput, anoInput, fallaInput, comunaInput, direccionInput];
+      
+      if (!tipoInput.value) {
+        isValid = false;
+        tipoInput.previousElementSibling.classList.add('error');
+      }
+
+      requiredFields.forEach(field => {
+        if (!field.value) {
+          isValid = false;
+          field.classList.add('error');
+        } else {
+          field.classList.remove('error');
+        }
+      });
+
+      if (!isValid) return;
+
+      const message = 
+        `Hola, necesito asistencia técnica en terreno para un(a) ${tipoInput.value}:\n\n` +
+        `• Vehículo/Equipo: ${marcaInput.value} (Año ${anoInput.value})\n` +
+        `• Problema / Falla: ${fallaInput.value}\n` +
+        `• Ubicación: Comuna ${comunaInput.value}, Dirección: ${direccionInput.value}\n\n` +
+        `Favor confirmar disponibilidad de visita técnica y valor estimado.`;
+
+      window.open(`https://wa.me/56953797437?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    // 4. Phone Copy
+    if (e.target.closest('#btn-copy-phone')) {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(phoneNumber);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = phoneNumber;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        showToast(`Teléfono ${phoneNumber} copiado al portapapeles`);
+      } catch (err) {
+        showToast(`Número: ${phoneNumber}`);
+      }
+      return;
+    }
+
+    // 5. Services Accordion
+    const serviceAccTrigger = e.target.closest('.service-acc-trigger');
+    if (serviceAccTrigger) {
+      const item = serviceAccTrigger.closest('.service-acc-item');
+      const isExpanded = serviceAccTrigger.getAttribute('aria-expanded') === 'true';
+
+      if (!isExpanded) {
+        // Close others
+        document.querySelectorAll('.service-acc-item.is-open').forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherTrigger = otherItem.querySelector('.service-acc-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+            otherItem.classList.remove('is-open');
+          }
+        });
+
+        // Open current
+        serviceAccTrigger.setAttribute('aria-expanded', 'true');
+        item.classList.add('is-open');
+      }
+      return;
+    }
+  });
+
+  document.body.addEventListener('input', (e) => {
+    if (e.target.classList.contains('form-control')) {
+      e.target.classList.remove('error');
+    }
+  });
+
+  document.body.addEventListener('change', (e) => {
+    if (e.target.classList.contains('form-control')) {
+      e.target.classList.remove('error');
+    }
+  });
+
+  // --- KEYDOWN EVENTS ---
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && state.menuOpen) {
+      toggleMenu(false);
+    }
+  });
+
+  // --- COMMUNE SEARCH FILTER ---
+  if (searchInput && communesGrid) {
+    const communePills = communesGrid.querySelectorAll('.commune-pill');
+    
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      let matchCount = 0;
+      
+      communePills.forEach(pill => {
+        const name = (pill.textContent || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const isMatch = name.includes(query);
+        pill.style.display = isMatch ? 'flex' : 'none';
+        if (isMatch) matchCount++;
+      });
+
+      let emptyMsg = document.getElementById('communes-empty-msg');
+      if (matchCount === 0 && !emptyMsg) {
+        emptyMsg = document.createElement('div');
+        emptyMsg.id = 'communes-empty-msg';
+        emptyMsg.style.cssText = 'grid-column: 1 / -1; padding: 14px; color: #FF9900; font-family: var(--font-mono); font-size: 12px; background-color: rgba(255, 153, 0, 0.08); border: 1px solid var(--border-amber); border-radius: var(--radius-sm);';
+        emptyMsg.innerHTML = 'No encontramos esa comuna en la lista rápida, ¡pero escríbenos por WhatsApp y confirmamos factibilidad técnica de inmediato!';
+        communesGrid.appendChild(emptyMsg);
+      } else if (matchCount > 0 && emptyMsg) {
+        emptyMsg.remove();
+      }
+    });
+  }
+
+  // --- SCROLL SPY & STICKY HEADER OFFSET ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  if (sections.length > 0 && navLinks.length > 0) {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY + 90;
+      let currentId = '';
+      
+      for(let i = 0; i < sections.length; i++) {
+        const top = sections[i].offsetTop;
+        const height = sections[i].offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          currentId = sections[i].getAttribute('id');
+          break;
+        }
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+      });
+    }, { passive: true });
+  }
+});
