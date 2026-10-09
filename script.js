@@ -152,7 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 4. Phone Copy
+
+
+    // 5. Phone Copy
     if (e.target.closest('#btn-copy-phone')) {
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -314,3 +316,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 });
+
+(function() {
+  const callBtn = document.getElementById('btn-call-trigger');
+  if (!callBtn) return;
+
+  const phoneNumber = '+56953797437';
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent) 
+                   || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2);
+
+  callBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // 1. ALWAYS COPY TO CLIPBOARD AS GUARANTEED ACTION
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(phoneNumber).catch(function() {
+        fallbackCopyText(phoneNumber);
+      });
+    } else {
+      fallbackCopyText(phoneNumber);
+    }
+
+    // 2. DEVICE-SPECIFIC ACTION
+    if (isMobile) {
+      // Direct call protocol for phones (bypasses Chrome webpage navigation)
+      window.location.assign('tel:' + phoneNumber);
+    } else {
+      // Visual feedback on desktop that number was copied
+      const textSpan = document.getElementById('call-btn-text');
+      if (textSpan) {
+        const originalText = textSpan.textContent;
+        textSpan.textContent = "¡NÚMERO COPIADO!";
+        setTimeout(function() {
+          textSpan.textContent = originalText;
+        }, 2200);
+      }
+    }
+  });
+
+  // Fallback copy function for older mobile browsers/webviews
+  function fallbackCopyText(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-999999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+    } catch (err) {}
+    document.body.removeChild(textArea);
+  }
+})();
