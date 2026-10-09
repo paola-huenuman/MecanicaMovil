@@ -106,8 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.closest('.btn-funnel-submit')) {
       e.preventDefault();
-      const form = e.target.closest('.funnel-form');
-      const tipoInput = form.querySelector('.input-tipo');
+      const form = e.target.closest('form');
+      if (!form) return;
+
+      const tipoInput = form.querySelector('.input-tipo-vehiculo');
       const marcaInput = form.querySelector('.input-marca');
       const anoInput = form.querySelector('.input-ano');
       const fallaInput = form.querySelector('.input-falla');
@@ -119,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (!tipoInput.value) {
         isValid = false;
-        tipoInput.previousElementSibling.classList.add('error');
+        if (tipoInput.previousElementSibling) {
+          tipoInput.previousElementSibling.classList.add('error');
+        }
       }
 
       requiredFields.forEach(field => {
@@ -133,14 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!isValid) return;
 
-      const message = 
-        `Hola, necesito asistencia técnica en terreno para un(a) ${tipoInput.value}:\n\n` +
-        `• Vehículo/Equipo: ${marcaInput.value} (Año ${anoInput.value})\n` +
-        `• Problema / Falla: ${fallaInput.value}\n` +
-        `• Ubicación: Comuna ${comunaInput.value}, Dirección: ${direccionInput.value}\n\n` +
-        `Favor confirmar disponibilidad de visita técnica y valor estimado.`;
+      const vehiculoTipo = tipoInput.value;
+      const marcaModelo = marcaInput.value;
+      const ano = anoInput.value;
+      const falla = fallaInput.value;
+      const comuna = comunaInput.value;
+      const direccion = direccionInput.value;
 
-      window.open(`https://wa.me/56953797437?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      const targetPhone = "56953797437";
+      const message = `Hola, necesito asistencia técnica en terreno:\n\n• Vehículo/Equipo: ${vehiculoTipo || 'No especificado'} - ${marcaModelo || ''} (${ano || ''})\n• Problema / Falla: ${falla || 'Diagnóstico general'}\n• Ubicación: ${comuna || ''}, ${direccion || ''}\n\nFavor confirmar disponibilidad y presupuesto.`;
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(message)}`;
+
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
       return;
     }
 
@@ -172,20 +180,65 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = serviceAccTrigger.closest('.service-acc-item');
       const isExpanded = serviceAccTrigger.getAttribute('aria-expanded') === 'true';
 
-      if (!isExpanded) {
-        // Close others
-        document.querySelectorAll('.service-acc-item.is-open').forEach(otherItem => {
-          if (otherItem !== item) {
-            const otherTrigger = otherItem.querySelector('.service-acc-trigger');
-            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-            otherItem.classList.remove('is-open');
-          }
-        });
+      // Close others
+      document.querySelectorAll('.service-acc-item.is-open').forEach(otherItem => {
+        if (otherItem !== item) {
+          const otherTrigger = otherItem.querySelector('.service-acc-trigger');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          otherItem.classList.remove('is-open');
+        }
+      });
 
-        // Open current
+      if (isExpanded) {
+        // Collapse it
+        serviceAccTrigger.setAttribute('aria-expanded', 'false');
+        item.classList.remove('is-open');
+      } else {
+        // Expand it
         serviceAccTrigger.setAttribute('aria-expanded', 'true');
         item.classList.add('is-open');
       }
+      return;
+    }
+
+    // 6. Services CTA Buttons -> Scroll to Form & Pre-select
+    const serviceCtaBtn = e.target.closest('.service-cta-btn');
+    if (serviceCtaBtn) {
+      e.preventDefault();
+      
+      const targetType = serviceCtaBtn.getAttribute('data-target-type');
+      const targetFailure = serviceCtaBtn.getAttribute('data-target-failure');
+      
+      if (targetType) {
+        // Find matching pill button and trigger click
+        const optionButtons = document.querySelectorAll('.pill-btn');
+        optionButtons.forEach(opt => {
+          if (opt.textContent.trim().toLowerCase() === targetType.toLowerCase()) {
+            opt.click();
+          }
+        });
+      }
+
+      if (targetFailure) {
+        const fallaInput = document.querySelector('.input-falla');
+        if (fallaInput) {
+          fallaInput.value = targetFailure;
+          fallaInput.classList.remove('error');
+        }
+      }
+
+      // Smooth scroll to form
+      const formContainer = document.querySelector('.lead-capture-funnel') || document.getElementById('contacto');
+      if (formContainer) {
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // Focus first input of Step 2 after scrolling
+      setTimeout(() => {
+        const firstInput = document.querySelector('.input-marca');
+        if (firstInput) firstInput.focus();
+      }, 500);
+
       return;
     }
   });
